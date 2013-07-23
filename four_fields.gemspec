@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.test_files = Dir['test/**/*.rb']
   
   s.add_dependency 'squeel', '~>1.1'
-  s.add_dependency 'devise', '~>2.2'
+  s.add_dependency 'devise', '~>3.0'
 end

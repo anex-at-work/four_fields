@@ -44,7 +44,7 @@ class UnitTest < Test::Unit::TestCase
     )
     #ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
-  
+
   def test_create_object
     obj = FourField.new :value => 'test value'
     obj.save!
@@ -76,7 +76,7 @@ class UnitTest < Test::Unit::TestCase
    old = FourField.unscoped.unactive.where{value == 'destroyed'}.first
    assert_not_nil old
   end
-  
+
   def test_update_object
     obj = FourField.create :value => 'update me!'
     assert_not_nil obj
@@ -89,7 +89,7 @@ class UnitTest < Test::Unit::TestCase
     assert_not_nil finded
     assert_equal 'update me!', finded.value
   end  
-  
+
   def test_table_with_association
     obj = FourField.create :value => 'first'
     obj.build_user
@@ -208,8 +208,8 @@ end
 class FourField < ActiveRecord::Base
   four_fields
   
-  has_one :user, :conditions => {:end_at => nil}
-  has_one :user_unactive, :conditions => %("users"."end_at" IS NOT NULL), :class_name => 'User'
+  has_one :user, -> { where end_at: nil}
+  has_one :user_unactive, -> { where.not end_at: nil }, :class_name => 'User'
   
   accepts_nested_attributes_for :user
 end
