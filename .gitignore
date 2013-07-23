@@ -2,4 +2,4 @@
 *.sqlite
 *.gem
 pkg
-/Gemfile.lock
+Gemfile.lock
