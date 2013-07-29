@@ -10,6 +10,6 @@ class FourFieldsGenerator < Rails::Generators::Base
   end
   
   def create_migration_file
-    migration_template 'four_fields_change.rb', %(db/migrate/add_four_fileds_to_#{model_name.tableize}.rb)
+    migration_template 'four_fields_change.rb', %(db/migrate/add_four_fields_to_#{model_name.tableize}.rb)
   end
 end
