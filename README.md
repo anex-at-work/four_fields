@@ -28,3 +28,5 @@ four_fields :disable_update => true
 ## ... and more
 
 see the tests
+
+## Generators
