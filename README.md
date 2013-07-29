@@ -30,3 +30,11 @@ four_fields :disable_update => true
 see the tests
 
 ## Generators
+
+When
+
+```
+rails generate four_fields MODEL
+```
+
+then generate migration with four fields. Do not forget run **rake db:migrate**
