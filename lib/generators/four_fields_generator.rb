@@ -1,4 +1,6 @@
 class FourFieldsGenerator < Rails::Generators::Base
+  include Rails::Generators::Migration
+  
   desc 'Generate migration (with default fields) for model'
   argument :model_name, :type => :string
   source_root File.expand_path('../templates', __FILE__)
